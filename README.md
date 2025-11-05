@@ -65,8 +65,8 @@ files:
 
 The result of the above configuration is that the following dependency files would be generated:
 
-- `conda/environments/all_cuda-115_arch-x86_64.yaml`
-- `conda/environments/all_cuda-116_arch-x86_64.yaml`
+- `conda/environments/all_cuda-115_arch-$(arch).yaml`
+- `conda/environments/all_cuda-116_arch-$(arch).yaml`
 - `python/cudf/requirements_all_cuda-115_arch-x86_64.txt`
 - `python/cudf/requirements_all_cuda-116_arch-x86_64.txt`
 - `python/cudf/requirements_build_cuda-115_arch-x86_64_py-38.txt`
@@ -229,7 +229,7 @@ files:
       - test
 ```
 
-In this example, `rapids-dependency-file-generator` will generate two conda environment files: `conda/environments/all_cuda-115_arch-x86_64.yaml` and `conda/environments/all_cuda-116_arch-x86_64.yaml`.
+In this example, `rapids-dependency-file-generator` will generate two conda environment files: `conda/environments/all_cuda-115_arch-$(arch).yaml` and `conda/environments/all_cuda-116_arch-$(arch).yaml`.
 
 Since the `output` value is `conda`, `rapids-dependency-file-generator` will iterate through any `dependencies.build.common` and `dependencies.test.common` list entries and use the `packages` of any entry whose `output_types` key is `conda` or `[conda, ...]`.
 
